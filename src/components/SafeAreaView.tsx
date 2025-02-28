@@ -1,6 +1,5 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {FC} from 'react';
-import {Box} from './ui/box';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 type Props = {
@@ -11,9 +10,10 @@ type Props = {
 const SafeAreaView: FC<Props> = ({children}) => {
   const insets = useSafeAreaInsets();
   return (
-    <Box style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
+    <View
+      style={{flex: 1, paddingTop: insets.top, paddingBottom: insets.bottom}}>
       {children}
-    </Box>
+    </View>
   );
 };
 
