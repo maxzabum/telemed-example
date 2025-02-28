@@ -1,3 +1,82 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "." ,
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@navigation/*": [
+        "src/navigation/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@stores*": [
+        "src/stores/*"
+      ],
+      "@viewmodels/*": [
+        "src/viewmodels/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "tailwind.config": [
+        "tailwind.config.js"
+      ]
+    }
+  }
 }
+// {
+//   "extends": "@react-native/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "paths": {
+//       "@components/*": [
+//         "./src/components/*"
+//       ],
+//       "@assets/*": [
+//         "./src/assets/*"
+//       ],
+//       "@screens/*": [
+//         "./src/screens/*"
+//       ],
+//       "@navigation/*": [
+//         "./src/navigation/*"
+//       ],
+//       "@types/*": [
+//         "./src/types/*"
+//       ],
+//       "@stores*": [
+//         "./src/stores/*"
+//       ],
+//       "@viewmodels/*": [
+//         "./src/viewmodels/*"
+//       ],
+//       "@/*": [
+//         "./*"
+//       ],
+//       "tailwind.config": [
+//         "./tailwind.config.js"
+//       ]
+//     }
+//   }
+// }
+// {
+//   "extends": "@react-native/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": [
+//         "./*"
+//       ],
+//       "tailwind.config": [
+//         "./tailwind.config.js"
+//       ]
+//     }
+//   }
+// }

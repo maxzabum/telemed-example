@@ -10,8 +10,29 @@
     "test": "jest"
   },
   "dependencies": {
+    "@gluestack-ui/button": "^1.0.12",
+    "@gluestack-ui/icon": "^0.1.25",
+    "@gluestack-ui/image": "^0.1.15",
+    "@gluestack-ui/input": "^0.1.36",
+    "@gluestack-ui/link": "^0.1.27",
+    "@gluestack-ui/nativewind-utils": "^1.0.26",
+    "@gluestack-ui/overlay": "^0.1.20",
+    "@gluestack-ui/toast": "^1.0.9",
+    "@react-navigation/native": "^7.0.14",
+    "@react-navigation/native-stack": "^7.2.0",
+    "nativewind": "^4.1.23",
     "react": "19.0.0",
-    "react-native": "0.78.0"
+    "react-dom": "^19.0.0",
+    "react-native": "0.78.0",
+    "react-native-asset": "^2.1.1",
+    "react-native-css-interop": "^0.1.22",
+    "react-native-reanimated": "^3.17.0",
+    "react-native-safe-area-context": "^5.2.0",
+    "react-native-screens": "^4.9.1",
+    "react-native-svg": "^15.11.2",
+    "react-native-tab-view": "^4.0.5",
+    "tailwindcss": "^3.4.17",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -27,8 +48,10 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
+    "babel-plugin-module-resolver": "^5.0.2",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
+    "jscodeshift": "^0.15.2",
     "prettier": "2.8.8",
     "react-test-renderer": "19.0.0",
     "typescript": "5.0.4"
