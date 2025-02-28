@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ['module:@react-native/babel-preset', "nativewind/babel"],
+  presets: ['module:@react-native/babel-preset'],
 
   plugins: [["module-resolver", {
     root: ["."],
@@ -15,7 +15,6 @@ module.exports = {
       "@constants": "./src/constants",
       "@viewmodels": "./src/viewmodels",
       "@utils": "./src/utils",
-      "tailwind.config": "./tailwind.config.js"
     }
   }]]
 };
