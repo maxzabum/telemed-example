@@ -15,20 +15,8 @@ module.exports = {
       "@constants": "./src/constants",
       "@viewmodels": "./src/viewmodels",
       "@utils": "./src/utils",
+      "@constants": "./src/constants",
+      "@hooks": "./src/hooks",
     }
   }]]
 };
-
-// module.exports = {
-//   presets: ['module:@react-native/babel-preset', "nativewind/babel"],
-
-//   plugins: [["module-resolver", {
-//     root: ["./"],
-//     extensions: [".js", ".ts", ".tsx", ".jsx"],
-
-//     alias: {
-//       "@": "./",
-//       "tailwind.config": "./tailwind.config.js"
-//     }
-//   }]]
-// };

@@ -1,11 +1,15 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   createStaticNavigation,
+  NavigatorScreenParams,
   StaticParamList,
 } from '@react-navigation/native';
 import AuthStack from './AuthStack';
 import DoctorStack from './DoctorStack';
+import {headerTitleStyle} from '@constants/headerTitleStyle';
+import {DoctorStackParamList} from '../types';
 
+// Combine nested stacks
 const RootStack = createNativeStackNavigator({
   screens: {
     Auth: {
@@ -16,20 +20,23 @@ const RootStack = createNativeStackNavigator({
     },
     Doctor: {
       screen: DoctorStack,
+      options: {
+        headerShown: false,
+      },
     },
   },
   screenOptions: {
-    contentStyle: {
-      backgroundColor: '#000000',
-    },
+    headerTitleStyle: headerTitleStyle,
   },
 });
 export const Navigation = createStaticNavigation(RootStack);
 
+// type declaration for type-safe navigation
 type RootStackParamList = StaticParamList<typeof RootStack>;
-
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends RootStackParamList {
+      Doctor: NavigatorScreenParams<DoctorStackParamList>;
+    }
   }
 }

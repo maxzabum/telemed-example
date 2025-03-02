@@ -1,3 +1,4 @@
-export type IAuth = {
+export type AuthState = {
     userIdentityNumber: string;
+    setUserIdentityNumber: (userIdentityNumber: string) => void;
 }

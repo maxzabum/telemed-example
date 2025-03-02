@@ -12,6 +12,7 @@ const Text: FC<TextProps> = ({
   return (
     <UIText
       {...props}
+      allowFontScaling={false}
       fontSize={fontSize}
       fontWeight={fontWeight}
       color={color}>

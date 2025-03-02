@@ -4,6 +4,9 @@ import {
   ButtonProps,
   ColorTokens,
   FontSizeTokens,
+  FontWeightTokens,
+  RadiusTokens,
+  SizeTokens,
   Button as UIButton,
 } from 'tamagui';
 
@@ -13,28 +16,58 @@ type Props = {
 
 const Button: FC<Props> = ({
   children,
-  size,
+  size = '$xl',
   type = 'primary',
   disabled = false,
   ...props
 }) => {
-  // Map button size to font size tokens
-  const getFontSize = (): FontSizeTokens => {
+  //map button size to style
+  const getButtonStyle = (): {
+    fontSize: FontSizeTokens;
+    fontWeight: FontWeightTokens;
+    radius: RadiusTokens;
+    height: SizeTokens;
+  } => {
     switch (size) {
       case '$sm':
-        return '$sm';
+        return {
+          fontSize: '$md',
+          fontWeight: '400',
+          radius: '$full',
+          height: '$sm',
+        };
       case '$md':
-        return '$md';
+        return {
+          fontSize: '$md',
+          fontWeight: '600',
+          radius: '$md',
+          height: '$md',
+        };
       case '$lg':
-        return '$lg';
+        return {
+          fontSize: '$lg',
+          fontWeight: '600',
+          radius: '$md',
+          height: '$lg',
+        };
       case '$xl':
-        return '$xl';
+        return {
+          fontSize: '$xl',
+          fontWeight: '600',
+          radius: '$md',
+          height: '$xl',
+        };
       default:
-        return '$lg';
+        return {
+          fontSize: '$lg',
+          fontWeight: '600',
+          radius: '$md',
+          height: '$lg',
+        };
     }
   };
 
-  // Map button type to color tokens
+  //map button type to style with disabled state
   const getButtonType = (): {
     textColor: ColorTokens;
     bgColor: ColorTokens;
@@ -61,6 +94,7 @@ const Button: FC<Props> = ({
         };
     }
   };
+
   return (
     <UIButton
       {...props}
@@ -72,11 +106,13 @@ const Button: FC<Props> = ({
         opacity: 0.9,
         borderWidth: 0,
       }}
+      rounded={getButtonStyle().radius}
+      px={'$xl'}
       items={'center'}
       justify={'center'}
-      height={size}
-      fontSize={getFontSize()}
-      fontWeight={'600'}>
+      height={getButtonStyle().height}
+      fontSize={getButtonStyle().fontSize}
+      fontWeight={getButtonStyle().fontWeight}>
       {children}
     </UIButton>
   );

@@ -1,7 +1,8 @@
+import {headerTitleStyle} from '@constants/headerTitleStyle';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from '@screens/auth/LoginScreen';
-import WelcomeScreen from '@screens/auth/WelcomeScreen';
 
+// Create a stack navigator for authentication screens
 const AuthStack = createNativeStackNavigator({
   screens: {
     Login: {
@@ -10,17 +11,9 @@ const AuthStack = createNativeStackNavigator({
         headerShown: false,
       },
     },
-    Welcome: {
-      screen: WelcomeScreen,
-      options: {
-        headerShown: false,
-      },
-    },
   },
   screenOptions: {
-    contentStyle: {
-      backgroundColor: '#FFFFFF',
-    },
+    headerTitleStyle: headerTitleStyle,
   },
 });
 

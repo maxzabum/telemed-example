@@ -1,12 +1,9 @@
+import { AuthState } from "../types";
 import { create } from "zustand";
-import { IAuth } from "../types";
 
-type AuthState = {
-    userIdentityNumber: string;
-    setUserIdentityNumber: (userIdentityNumber: string) => void;
-}
+//Create a store for authentication
 export const useAuthStore = create<AuthState>((set) => ({
-    userIdentityNumber:'',
+    userIdentityNumber: '',
 
     //Set the userIdentityNumber
     setUserIdentityNumber: (userIdentityNumber: string) => {

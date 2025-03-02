@@ -1,20 +1,25 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {FC} from 'react';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-
-type Props = {
-  children?: React.ReactNode;
-};
+import {
+  SafeAreaView as RNSafeAreaView,
+  SafeAreaViewProps,
+} from 'react-native-safe-area-context';
+import {config} from 'tamagui.config';
 
 // Create a safe area view component
-const SafeAreaView: FC<Props> = ({children}) => {
-  const insets = useSafeAreaInsets();
+const SafeAreaView: FC<SafeAreaViewProps> = ({children, ...props}) => {
   return (
-    <View
-      style={{flex: 1, paddingTop: insets.top, paddingBottom: insets.bottom}}>
+    <RNSafeAreaView {...props} style={[styles.safeArea]}>
       {children}
-    </View>
+    </RNSafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  safeArea: {
+    backgroundColor: config.tokens.color.backgroundGeneralStandardDefault.val,
+    flex: 1,
+  },
+});
 
 export default SafeAreaView;
